@@ -9,7 +9,7 @@ const port = process.env.PORT||3000;
 app.use(express.json());
 
 // Replace the values here.
-process.env.GOOGLE_APPLICATION_CREDENTIALS = 'ultrasupport-ftwp-62f02c72f9bd';
+process.env.GOOGLE_APPLICATION_CREDENTIALS = 'ultrasupport-ftwp-62f02c72f9bd.json';
 const INSTANCE_URL = 'https://api.maytapi.com/api';
 const PRODUCT_ID = '0f30910b-4f24-4e17-af82-008c5f05fe1d';
 const PHONE_ID = '8207';
