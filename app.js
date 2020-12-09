@@ -11,9 +11,9 @@ app.use(express.json());
 // Replace the values here.
 process.env.GOOGLE_APPLICATION_CREDENTIALS = 'ultrasupport-ftwp-62f02c72f9bd';
 const INSTANCE_URL = 'https://api.maytapi.com/api';
-const PRODUCT_ID = 'f2560472-8793-4daa-b602-92161cb076d7';
-const PHONE_ID = '8063';
-const API_TOKEN = '5e8d6de2-ce17-49f7-a367-d5147373e4f1';
+const PRODUCT_ID = '0f30910b-4f24-4e17-af82-008c5f05fe1d';
+const PHONE_ID = '8207';
+const API_TOKEN = 'aeaf95d0-44ba-4ad2-bb15-ee8d7d1a5067';
 const PROJECT_ID = 'ultrasupport-ftwp';
 
 if (!PRODUCT_ID || !PHONE_ID || !API_TOKEN) throw Error('You need to change PRODUCT_ID, PHONE_ID and API_KEY values in app.js file.');
