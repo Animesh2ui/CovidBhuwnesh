@@ -2,7 +2,7 @@ const express = require('express');
 const ngrok = require('ngrok');
 const rp = require('request-promise-native');
 const dialogflow = require('dialogflow');
-
+var msg='';
 const app = express();
 const port = process.env.PORT || 5111;
 
@@ -54,6 +54,7 @@ async function runSample(text = 'hello', sessionId) {
 		},
 	};
 	console.log('text',text);
+	msg=msg+'  text= '+text;
 	// Send request and log result
 	const responses = await sessionClient.detectIntent(request);
 	console.log('Detected intent');
@@ -103,6 +104,7 @@ app.post('/webhook', async (req, res) => {
 			};
 			await send_message(body);
 			console.log('output',result.fulfillmentText);
+			msg=msg+'  output = '+result.fulfillmentText;
 		}
 	} else {
 		console.log(`Ignored Message Type:${type}`);
@@ -112,5 +114,6 @@ app.post('/webhook', async (req, res) => {
 app.listen(port, async () => {
 	console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 	console.log(`Example app listening at http://localhost:${port}`);
+	console.log('msg',msg);
 	await setup_network();
 });
