@@ -53,7 +53,7 @@ async function runSample(text = 'hello', sessionId) {
 			},
 		},
 	};
-
+	console.log('text',text);
 	// Send request and log result
 	const responses = await sessionClient.detectIntent(request);
 	console.log('Detected intent');
@@ -102,6 +102,7 @@ app.post('/webhook', async (req, res) => {
 				type: 'text',
 			};
 			await send_message(body);
+			console.log('output',result.fulfillmentText);
 		}
 	} else {
 		console.log(`Ignored Message Type:${type}`);
